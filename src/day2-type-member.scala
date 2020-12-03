@@ -23,7 +23,9 @@ object Examples {
     xs.foreach { a =>
       println((a.show: Show[a.T]).show(a.value: a.T))
     }
-  
+
+  implicitly[Annex =:= (Annex { type T = S } forSome { type S })]
+
   def main(args: Array[String]): Unit = showAll(1, "two", 3.0)
 
 

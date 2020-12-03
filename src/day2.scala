@@ -4,7 +4,7 @@ object Examples2 {
 
   implicit def conv[T: Show](t: T): Annex[T] = new Annex[T](t, implicitly[Show[T]])
 
-  class Annex[T](val value: T, val show: Show[T])
+  class Annex[T](val value: T, val show: Show[T]) 
 
   implicit val showInt: Show[Int] = _.toString
   implicit val showString: Show[String] = s => s""""$s""""
